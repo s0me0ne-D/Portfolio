@@ -1,0 +1,73 @@
+body {
+	--primary-color: #ff003d;
+	--fill-git: var(--primary-color);
+	--fill-telegram: var(--primary-color);
+	--fill-linkedin: var(--primary-color);
+	--fill-discord: var(--primary-color);
+	--link-color: white;
+	--header-color: #14141470;
+	--send-button-color: #ff003c37;
+	--send-button-text-color: white;
+	--form-border-color: white;
+	--border-send: 2px solid var(--send-button-color);
+	--footer-background: #252525;
+	--footer-text-color: rgba(255, 255, 255, 0.48);
+	&.white {
+		--header-color: rgba(255, 255, 255, 0.485);
+		--link-color: black;
+		background-color: white;
+		color: black;
+		--primary-color: #2c67eb;
+		--fill-git: black;
+		--fill-telegram: #0088cc;
+		--fill-linkedin: #0077b5;
+		--fill-discord: #5865f2;
+		--send-button-color: #2c67eb;
+		--send-button-text-color: var(--primary-color);
+		--form-border-color: black;
+		--border-send: 1px solid var(--primary-color);
+		--footer-background: #abb2bf;
+		--footer-text-color: rgba(0, 0, 0, 0.502);
+		.form__submit:hover {
+			color: white;
+		}
+		.info__hi_contact {
+			a {
+				&:hover {
+					background-color: #2a6eff2f;
+					color: rgb(61, 61, 61);
+				}
+			}
+		}
+		.percentage {
+			color: #2a6eff81;
+		}
+		.flip {
+			svg {
+				&:nth-child(2) {
+					position: absolute;
+					visibility: visible;
+				}
+			}
+			img {
+				&:nth-child(2) {
+					visibility: visible;
+				}
+			}
+		}
+		.info {
+			&__hi {
+				a {
+					border-radius: 5px;
+				}
+			}
+		}
+		.header {
+			&__logo {
+				div {
+					border-radius: 3px;
+				}
+			}
+		}
+	}
+}
