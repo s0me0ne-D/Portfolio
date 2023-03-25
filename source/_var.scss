@@ -1,18 +1,21 @@
 body {
-	--primary-color: #ff003d;
-	--fill-git: var(--primary-color);
-	--fill-telegram: var(--primary-color);
-	--fill-linkedin: var(--primary-color);
-	--fill-discord: var(--primary-color);
-	--link-color: white;
-	--header-color: #14141470;
-	--send-button-color: #ff003c37;
-	--send-button-text-color: white;
-	--form-border-color: white;
-	--border-send: 2px solid var(--send-button-color);
-	--footer-background: #252525;
-	--footer-text-color: rgba(255, 255, 255, 0.48);
-	&.white {
+	&.dark {
+		--primary-color: #ff003d;
+		--fill-git: var(--primary-color);
+		--fill-telegram: var(--primary-color);
+		--fill-linkedin: var(--primary-color);
+		--fill-discord: var(--primary-color);
+		--link-color: white;
+		--header-color: #14141470;
+		--send-button-color: #ff003c37;
+		--send-button-text-color: white;
+		--form-border-color: white;
+		--border-send: 2px solid var(--send-button-color);
+		--footer-background: #252525;
+		--footer-text-color: rgba(255, 255, 255, 0.48);
+		--change-theme-back: #ff003c37;
+	}
+	&.light {
 		--header-color: rgba(255, 255, 255, 0.485);
 		--link-color: black;
 		background-color: white;
@@ -28,6 +31,8 @@ body {
 		--border-send: 1px solid var(--primary-color);
 		--footer-background: #abb2bf;
 		--footer-text-color: rgba(0, 0, 0, 0.502);
+		--change-theme-back: #2a6eff81;
+
 		.form__submit:hover {
 			color: white;
 		}
