@@ -14,6 +14,7 @@ body {
 		--footer-background: #252525;
 		--footer-text-color: rgba(255, 255, 255, 0.48);
 		--change-theme-back: #ff003c37;
+		--active-burger: #141414;
 	}
 	&.light {
 		--header-color: rgba(255, 255, 255, 0.485);
@@ -32,7 +33,14 @@ body {
 		--footer-background: #abb2bf;
 		--footer-text-color: rgba(0, 0, 0, 0.502);
 		--change-theme-back: #2a6eff81;
+		--active-burger: white;
 
+		a,
+		input,
+		button,
+		.menu-burger {
+			cursor: url(../img/cursor/light.png), auto;
+		}
 		.form__submit:hover {
 			color: white;
 		}

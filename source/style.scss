@@ -44,7 +44,11 @@
 		color: var(--primary-color);
 	}
 }
-
+a,
+input,
+button {
+	cursor: url(../img/cursor/dark.png), auto;
+}
 body {
 	width: 100%;
 	background-color: #141414;
@@ -802,16 +806,17 @@ body {
 @media (max-width: 700px) {
 	header {
 		&.active {
-			background-color: #141414;
+			background-color: var(--active-burger);
 		}
 	}
 	.list {
 		position: absolute;
 		top: 50px;
 		left: 0;
-		background-color: #141414;
+		background-color: var(--active-burger);
+		font-size: 30px;
 		div {
-			margin: 10px auto;
+			margin: 10px auto 20px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -829,10 +834,11 @@ body {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
+		justify-content: center;
+		width: fit-content;
 		height: 20px;
+		position: relative;
+		cursor: url(../img/cursor/dark.png), auto;
 
 		&::before {
 			content: "";
@@ -840,6 +846,9 @@ body {
 			width: 30px;
 			height: 3px;
 			background-color: var(--link-color);
+			position: absolute;
+			top: -2px;
+			transition: 0.3s ease;
 		}
 		&::after {
 			content: "";
@@ -847,6 +856,9 @@ body {
 			width: 30px;
 			height: 3px;
 			background-color: var(--link-color);
+			position: absolute;
+			bottom: -2px;
+			transition: 0.3s ease;
 		}
 
 		span {
@@ -855,5 +867,49 @@ body {
 			height: 3px;
 			background-color: var(--link-color);
 		}
+	}
+	.menu-burger.active::before {
+		rotate: 45deg;
+		top: 8.5px;
+	}
+	.menu-burger.active::after {
+		rotate: -45deg;
+		bottom: 8.5px;
+	}
+	.menu-burger.active {
+		span {
+			visibility: hidden;
+		}
+	}
+	.info {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		&__hi {
+			text-align: center;
+			&_slogan {
+				position: absolute;
+				bottom: -80px;
+			}
+		}
+		&__photo {
+			margin-top: 20px;
+		}
+	}
+	.rows__info {
+		span:nth-child(4) {
+			display: none;
+		}
+	}
+	.form__row {
+		display: flex;
+		flex-direction: column;
+		.group {
+			width: 100%;
+			margin-top: 30px;
+		}
+	}
+	#message {
+		height: 80px;
 	}
 }

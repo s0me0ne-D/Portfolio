@@ -101,6 +101,7 @@ body.dark {
   --footer-background: #252525;
   --footer-text-color: rgba(255, 255, 255, 0.48);
   --change-theme-back: #ff003c37;
+  --active-burger: #141414;
 }
 body.light {
   --header-color: rgba(255, 255, 255, 0.485);
@@ -119,6 +120,13 @@ body.light {
   --footer-background: #abb2bf;
   --footer-text-color: rgba(0, 0, 0, 0.502);
   --change-theme-back: #2a6eff81;
+  --active-burger: white;
+}
+body.light a,
+body.light input,
+body.light button,
+body.light .menu-burger {
+  cursor: url(../img/cursor/light.png), auto;
 }
 body.light .form__submit:hover {
   color: white;
@@ -186,6 +194,12 @@ body.light .header__logo div {
     color: var(--primary-color);
   }
 }
+a,
+input,
+button {
+  cursor: url(../img/cursor/dark.png), auto;
+}
+
 body {
   width: 100%;
   background-color: #141414;
@@ -881,17 +895,18 @@ body h1 {
 }
 @media (max-width: 700px) {
   header.active {
-    background-color: #141414;
+    background-color: var(--active-burger);
   }
   .list {
     position: absolute;
     top: 50px;
     left: 0;
-    background-color: #141414;
+    background-color: var(--active-burger);
+    font-size: 30px;
     visibility: hidden;
   }
   .list div {
-    margin: 10px auto;
+    margin: 10px auto 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -907,10 +922,12 @@ body h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    justify-content: center;
+    width: -moz-fit-content;
+    width: fit-content;
     height: 20px;
+    position: relative;
+    cursor: url(../img/cursor/dark.png), auto;
   }
   .menu-burger::before {
     content: "";
@@ -918,6 +935,9 @@ body h1 {
     width: 30px;
     height: 3px;
     background-color: var(--link-color);
+    position: absolute;
+    top: -2px;
+    transition: 0.3s ease;
   }
   .menu-burger::after {
     content: "";
@@ -925,11 +945,54 @@ body h1 {
     width: 30px;
     height: 3px;
     background-color: var(--link-color);
+    position: absolute;
+    bottom: -2px;
+    transition: 0.3s ease;
   }
   .menu-burger span {
     display: block;
     width: 30px;
     height: 3px;
     background-color: var(--link-color);
+  }
+  .menu-burger.active::before {
+    rotate: 45deg;
+    top: 8.5px;
+  }
+  .menu-burger.active::after {
+    rotate: -45deg;
+    bottom: 8.5px;
+  }
+  .menu-burger.active span {
+    visibility: hidden;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .info__hi {
+    text-align: center;
+  }
+  .info__hi_slogan {
+    position: absolute;
+    bottom: -80px;
+  }
+  .info__photo {
+    margin-top: 20px;
+  }
+  .rows__info span:nth-child(4) {
+    display: none;
+  }
+  .form__row {
+    display: flex;
+    flex-direction: column;
+  }
+  .form__row .group {
+    width: 100%;
+    margin-top: 30px;
+  }
+  #message {
+    height: 80px;
   }
 }

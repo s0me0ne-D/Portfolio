@@ -15,9 +15,14 @@ function themeToggle() {
 const burger = document.querySelector(".menu-burger");
 const list = document.querySelector(".list");
 const headerBack = document.querySelector(".header");
+const clickReverse = document.querySelector(".container");
 burger.addEventListener("click", function () {
 	burger.classList.toggle("active");
 	list.classList.toggle("active");
 	headerBack.classList.toggle("active");
 });
-console.log(list);
+clickReverse.addEventListener("click", function () {
+	burger.classList.remove("active");
+	list.classList.remove("active");
+	headerBack.classList.remove("active");
+});
