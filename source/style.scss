@@ -44,6 +44,49 @@
 		color: var(--primary-color);
 	}
 }
+@keyframes logo {
+	0% {
+		rotate: 0;
+	}
+	100% {
+		rotate: 135deg;
+	}
+}
+@keyframes logo-name {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes swap {
+	0% {
+		left: 0;
+		top: 0px;
+	}
+	100% {
+		left: -70px;
+		top: -70px;
+	}
+}
+@keyframes burger {
+	0% {
+		top: -260px;
+	}
+	100% {
+		top: 50px;
+	}
+}
+@keyframes burger-none {
+	0% {
+		top: 50px;
+	}
+	100% {
+		top: -260px;
+	}
+}
+
 a,
 input,
 button {
@@ -76,76 +119,102 @@ body {
 	position: fixed;
 	top: 0;
 	z-index: 20;
-
+	background-color: var(--header-color);
+	backdrop-filter: blur(5px);
 	&__contain {
 		max-width: 1050px;
 		margin: 0px auto;
 		height: 50px;
-		background-color: var(--header-color);
-		display: flex;
-		flex-direction: row;
+		display: grid;
+		grid-template-columns: 160px 1fr 5fr 1fr;
 		justify-content: space-between;
 		font-size: 15px;
 		align-items: center;
-		z-index: 4;
-		backdrop-filter: blur(5px);
 		padding: 0 20px;
 	}
 	&__menu {
 		display: none;
 	}
 	&__logo {
-		width: 100px;
-		height: 25px;
+		width: 30px;
+		height: 30px;
 		font-family: "Press Start 2P";
 		position: relative;
 		display: flex;
 		align-items: center;
+		z-index: 20;
+		.logo-name {
+			color: var(--link-color);
+			position: absolute;
+			top: 7.5px;
+			left: 21px;
+			span {
+				opacity: 0;
+			}
+		}
+		svg {
+			width: 30px;
+			&:nth-child(1) {
+				rotate: 90deg;
+				position: absolute;
+			}
+			&:nth-child(2) {
+				rotate: -90deg;
+				position: absolute;
+			}
+		}
 		div {
 			transition: 0.3s linear;
 		}
-
+		.svg-logo {
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			&__wrapp {
+				width: 30px;
+				height: 30px;
+			}
+		}
 		&:hover {
-			.header__logo__cube-1 {
-				width: 15px;
-				height: 15px;
-				animation: rotate-1 3s linear infinite 0.3s;
+			width: 160px;
+			height: 42px;
+			.svg-logo {
+				width: 100%;
 			}
-			.header__logo__cube-2 {
-				width: 15px;
-				height: 15px;
-				top: 10px;
-				left: 85px;
-				animation: rotate-2 3s linear infinite 0.3s;
+			.svg-logo__wrapp {
+				animation: logo 0.5s ease forwards;
 			}
-		}
-
-		&__cube-1 {
-			z-index: -1;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border: 1px solid var(--primary-color);
-		}
-		&__cube-2 {
-			z-index: -1;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border: 1px solid var(--primary-color);
-		}
-
-		a {
-			width: 100%;
-			text-align: center;
-			text-decoration: none;
-			color: var(--link-color);
-			margin-left: 3px;
-			margin-top: 3px;
+			.logo-name {
+				span {
+					&:nth-child(1) {
+						transition: 0.1s ease-in 400ms;
+						opacity: 1;
+					}
+					&:nth-child(2) {
+						transition: 0.1s ease-in 440ms;
+						opacity: 1;
+					}
+					&:nth-child(3) {
+						transition: 0.1s ease-in 480ms;
+						opacity: 1;
+					}
+					&:nth-child(4) {
+						transition: 0.1s ease-in 520ms;
+						opacity: 1;
+					}
+					&:nth-child(5) {
+						transition: 0.1s ease-in 560ms;
+						opacity: 1;
+					}
+					&:nth-child(6) {
+						transition: 0.1s ease-in 600ms;
+						opacity: 1;
+					}
+				}
+			}
+			.svg-1 {
+				animation: swap 0.4s cubic-bezier(0.42, 0.37, 0.36, 1.33) forwards 0.4s;
+			}
 		}
 	}
 
@@ -176,18 +245,18 @@ body {
 		}
 	}
 	.theme-container {
-		width: 93px;
-	}
-	&__theme {
-		flex-grow: 1;
+		width: 100%;
 		display: flex;
 		justify-content: end;
-		margin-left: 40px;
+	}
+	&__theme {
+		display: flex;
+		justify-content: end;
 		position: relative;
 		input {
 			width: 30px;
 			height: 14px;
-			-webkit-appearance: none;
+			appearance: none;
 			border-radius: 10px;
 			background-color: var(--change-theme-back);
 			position: relative;
@@ -210,7 +279,6 @@ body {
 		}
 	}
 }
-
 .media {
 	position: fixed;
 	top: 0;
@@ -218,6 +286,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	z-index: 20;
 	&__line {
 		width: 2px;
 		height: 200px;
@@ -295,6 +364,7 @@ body {
 	margin-top: 100px;
 	align-items: center;
 	line-height: 25px;
+	height: 700px;
 	&__hi {
 		display: flex;
 		flex-direction: column;
@@ -314,13 +384,13 @@ body {
 		justify-content: center;
 		img {
 			max-width: 300px;
+			border-radius: 30px;
 		}
 	}
 }
 .main {
 	display: flex;
 	flex-direction: column;
-	margin-top: 200px;
 }
 .skills {
 	&__title {
@@ -483,7 +553,9 @@ body {
 	grid-template-rows: 200px 1fr 20px;
 	display: grid;
 	gap: 10px;
-
+	background-color: var(--blocks-background);
+	border-radius: 20px;
+	padding: 10px;
 	&__logo {
 		width: 100%;
 		height: 210px;
@@ -536,6 +608,9 @@ body {
 		max-width: 800px;
 		margin: 0 auto 0;
 		margin-top: 50px;
+		background-color: var(--blocks-background);
+		border-radius: 20px;
+		padding: 20px;
 	}
 	&__text {
 		margin-top: 30px;
@@ -656,7 +731,6 @@ body {
 }
 .footer {
 	width: 100%;
-	background-color: #141414;
 	background-color: var(--footer-background);
 	&__rows {
 		max-width: 1050px;
@@ -809,9 +883,14 @@ body {
 			background-color: var(--active-burger);
 		}
 	}
+	.header__contain {
+		display: grid;
+		grid-template-columns: 160px 1fr 160px auto;
+		justify-content: space-between;
+	}
 	.list {
 		position: absolute;
-		top: 50px;
+		top: -260px;
 		left: 0;
 		background-color: var(--active-burger);
 		font-size: 30px;
@@ -821,13 +900,31 @@ body {
 			flex-direction: column;
 			align-items: center;
 			a {
-				transition: none;
 				padding-left: 10px;
+				opacity: 0;
 			}
 		}
-		visibility: hidden;
 		&.active {
+			animation: burger 0.3s ease-in forwards;
 			visibility: visible;
+			div a {
+				&:nth-child(1) {
+					transition: 0.3s ease-in 200ms;
+					opacity: 1;
+				}
+				&:nth-child(2) {
+					transition: 0.3s ease-in 233ms;
+					opacity: 1;
+				}
+				&:nth-child(3) {
+					transition: 0.3s ease-in 266ms;
+					opacity: 1;
+				}
+				&:nth-child(4) {
+					transition: 0.3s ease-in 300ms;
+					opacity: 1;
+				}
+			}
 		}
 	}
 	.menu-burger {
@@ -837,6 +934,7 @@ body {
 		justify-content: center;
 		width: fit-content;
 		height: 20px;
+		margin: 0px auto;
 		position: relative;
 		cursor: url(../img/cursor/dark.png), auto;
 
@@ -889,11 +987,11 @@ body {
 			text-align: center;
 			&_slogan {
 				position: absolute;
-				bottom: -80px;
+				bottom: 100px;
 			}
 		}
 		&__photo {
-			margin-top: 20px;
+			margin-top: 110px;
 		}
 	}
 	.rows__info {

@@ -6,20 +6,21 @@ body {
 		--fill-linkedin: var(--primary-color);
 		--fill-discord: var(--primary-color);
 		--link-color: white;
-		--header-color: #14141470;
-		--send-button-color: #ff003c37;
+		--header-color: #25252577;
+		--send-button-color: #ff003c81;
 		--send-button-text-color: white;
 		--form-border-color: white;
 		--border-send: 2px solid var(--send-button-color);
-		--footer-background: #252525;
+		--footer-background: #25252577;
 		--footer-text-color: rgba(255, 255, 255, 0.48);
 		--change-theme-back: #ff003c37;
 		--active-burger: #141414;
+		--blocks-background: #34343448;
 	}
 	&.light {
-		--header-color: rgba(255, 255, 255, 0.485);
+		--header-color: #dedede81;
 		--link-color: black;
-		background-color: white;
+		background-color: rgb(255, 255, 255);
 		color: black;
 		--primary-color: #2c67eb;
 		--fill-git: black;
@@ -30,11 +31,14 @@ body {
 		--send-button-text-color: var(--primary-color);
 		--form-border-color: black;
 		--border-send: 1px solid var(--primary-color);
-		--footer-background: #abb2bf;
+		--footer-background: #dedede81;
 		--footer-text-color: rgba(0, 0, 0, 0.502);
 		--change-theme-back: #2a6eff81;
 		--active-burger: white;
-
+		--blocks-background: #ffffff81;
+		.header__logo svg path {
+			stroke: var(--primary-color);
+		}
 		a,
 		input,
 		button,

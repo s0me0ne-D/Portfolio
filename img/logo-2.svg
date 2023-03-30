@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Шар_2" data-name="Шар 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.71 41.71">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #e30613;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="_Шар_1-2" data-name="Шар 1">
+    <polygon class="cls-1" points=".5 .5 .5 40.5 40.5 .5 .5 .5"/>
+  </g>
+</svg>
