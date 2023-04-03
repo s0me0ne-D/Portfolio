@@ -127,12 +127,6 @@ body.light {
 body.light .header__logo svg path {
   stroke: var(--primary-color);
 }
-body.light a,
-body.light input,
-body.light button,
-body.light .menu-burger {
-  cursor: url(../img/cursor/light.png), auto;
-}
 body.light .form__submit:hover {
   color: white;
 }
@@ -225,18 +219,8 @@ body.light .header__logo div {
     top: 50px;
   }
 }
-@keyframes burger-none {
-  0% {
-    top: 50px;
-  }
-  100% {
-    top: -260px;
-  }
-}
-a,
-input,
-button {
-  cursor: url(../img/cursor/dark.png), auto;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -262,6 +246,7 @@ body h1 {
 
 .title {
   width: 100%;
+  height: 100vh;
 }
 
 .header {
@@ -317,10 +302,6 @@ body h1 {
 .header__logo .svg-logo__wrapp {
   width: 30px;
   height: 30px;
-}
-.header__logo:hover {
-  width: 160px;
-  height: 42px;
 }
 .header__logo:hover .svg-logo {
   width: 100%;
@@ -453,15 +434,14 @@ body h1 {
 .info {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  margin-top: 100px;
+  gap: 20px;
   align-items: center;
   line-height: 25px;
-  height: 700px;
+  height: 100%;
 }
 .info__hi {
   display: flex;
   flex-direction: column;
-  margin-right: 15px;
 }
 .info__hi_slogan {
   margin-top: 20px;
@@ -940,7 +920,7 @@ body h1 {
   }
   .header__contain {
     display: grid;
-    grid-template-columns: 160px 1fr 160px auto;
+    grid-template-columns: 1fr 3fr 1fr auto;
     justify-content: space-between;
   }
   .list {
@@ -962,7 +942,6 @@ body h1 {
   }
   .list.active {
     animation: burger 0.3s ease-in forwards;
-    visibility: visible;
   }
   .list.active div a:nth-child(1) {
     transition: 0.3s ease-in 200ms;
@@ -991,6 +970,7 @@ body h1 {
     margin: 0px auto;
     position: relative;
     cursor: url(../img/cursor/dark.png), auto;
+    z-index: 20;
   }
   .menu-burger::before {
     content: "";
@@ -1033,16 +1013,11 @@ body h1 {
     display: flex;
     flex-direction: column;
     position: relative;
+    justify-content: space-around;
   }
   .info__hi {
     text-align: center;
-  }
-  .info__hi_slogan {
-    position: absolute;
-    bottom: 100px;
-  }
-  .info__photo {
-    margin-top: 110px;
+    margin-top: 100px;
   }
   .rows__info span:nth-child(4) {
     display: none;

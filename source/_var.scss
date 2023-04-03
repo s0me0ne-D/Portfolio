@@ -39,12 +39,6 @@ body {
 		.header__logo svg path {
 			stroke: var(--primary-color);
 		}
-		a,
-		input,
-		button,
-		.menu-burger {
-			cursor: url(../img/cursor/light.png), auto;
-		}
 		.form__submit:hover {
 			color: white;
 		}
