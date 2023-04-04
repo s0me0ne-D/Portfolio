@@ -253,6 +253,8 @@ body h1 {
   width: 100%;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 20;
   background-color: var(--header-color);
   -webkit-backdrop-filter: blur(5px);
@@ -1033,4 +1035,7 @@ body h1 {
   #message {
     height: 80px;
   }
+}
+.projects__title__more {
+  display: none;
 }
